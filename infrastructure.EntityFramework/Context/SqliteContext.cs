@@ -9,7 +9,13 @@ namespace infrastructure.EntityFramework.Context
         public DbSet<User> Users;
         public SqliteContext(DbContextOptions<SqliteContext> options) : base(options)
         {
+
         }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
+            
+        }
     }
 }   

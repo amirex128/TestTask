@@ -12,8 +12,8 @@ namespace infrastructure.EntityFramework.Context
 
             services.AddDbContext<SqliteContext>(
                 dbContextOptions => dbContextOptions
-                    .UseSqlite(connectionString)
-            );
+                    .UseSqlite(connectionString, b => b.MigrationsAssembly("WebApi"))
+                , ServiceLifetime.Singleton);
         }
     }
 }
