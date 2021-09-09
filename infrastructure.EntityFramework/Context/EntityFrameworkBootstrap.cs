@@ -4,9 +4,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace infrastructure.EntityFramework.Context
 {
-    public class EntityFrameworkBootstrap
+    public static class EntityFrameworkBootstrap
     {
-        public static void AddSqlite(IServiceCollection services, IConfiguration configuration)
+        public static void AddSqlite(this IServiceCollection services, IConfiguration configuration)
         {
             var connectionString = configuration.GetConnectionString("sqlite");
             
