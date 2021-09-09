@@ -14,8 +14,8 @@ namespace infrastructure.Rabbitmq.Context
 {
     public class RabbitmqContext
     {
-        private readonly IModel _channel;
-        private readonly IConnection _connection;
+        private IModel _channel;
+        private IConnection _connection;
         public event EventHandler<BasicDeliverEventArgs> WeatherConsume;
 
         public RabbitmqContext(IOptions<RabbitmqOption> options)

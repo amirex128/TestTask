@@ -11,10 +11,10 @@ namespace Application.Weather
 {
     public class WeatherApplication
     {
-        private readonly IBackgroundJobClient _backgroundJobClient;
-        private readonly RabbitmqContext _rabbitmqContext;
-        private readonly IHttpClientFactory _httpClient;
-        private readonly IConfiguration _configuration;
+        private IBackgroundJobClient _backgroundJobClient;
+        private RabbitmqContext _rabbitmqContext;
+        private IHttpClientFactory _httpClient;
+        private IConfiguration _configuration;
 
         public WeatherApplication(IBackgroundJobClient backgroundJobClient, RabbitmqContext rabbitmqContext,
             IHttpClientFactory httpClient, IConfiguration configuration)
