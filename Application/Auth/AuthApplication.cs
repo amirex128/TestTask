@@ -24,7 +24,7 @@ namespace Application.Auth
         public bool RegisterUser(RegisterViewModel model)
         {
             var userAlreadyExists = _sqliteContext.Users.SingleOrDefault(x =>
-                x.Username == model.Username && x.Password == model.Password);
+                x.Username == model.Username);
 
             if (userAlreadyExists != null)
             {
