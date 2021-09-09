@@ -9,13 +9,11 @@ namespace infrastructure.EntityFramework.Context
         public static void AddSqlite(this IServiceCollection services, IConfiguration configuration)
         {
             var connectionString = configuration.GetConnectionString("sqlite");
-            
+
             services.AddDbContext<SqliteContext>(
                 dbContextOptions => dbContextOptions
                     .UseSqlite(connectionString)
-                    .EnableSensitiveDataLogging()
-                    .EnableDetailedErrors()
-                , ServiceLifetime.Singleton);
+            );
         }
     }
 }
