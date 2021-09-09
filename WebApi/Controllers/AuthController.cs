@@ -21,7 +21,7 @@ namespace WebApi.Controllers
             _authApplication = authApplication;
         }
 
-        [HttpPost]
+        [HttpPost("login")]
         public IActionResult Login(LoginViewModel model)
         {
             if (!ModelState.IsValid)
@@ -41,7 +41,7 @@ namespace WebApi.Controllers
             return Unauthorized();
         }
 
-        [HttpPost]
+        [HttpPost("register")]
         public IActionResult Login(RegisterViewModel model)
         {
             if (!ModelState.IsValid)
