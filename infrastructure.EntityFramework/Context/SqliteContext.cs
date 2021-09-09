@@ -5,8 +5,8 @@ namespace infrastructure.EntityFramework.Context
 {
     public class SqliteContext:DbContext
     {
-        public DbSet<Weather> Weathers;
-        public DbSet<User> Users;
+        public DbSet<Weather> Weathers { get; set; }
+        public DbSet<User> Users { get; set; }
         public SqliteContext(DbContextOptions<SqliteContext> options) : base(options)
         {
 

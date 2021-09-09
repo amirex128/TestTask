@@ -26,7 +26,7 @@ namespace Application.Auth
             var userAlreadyExists = _sqliteContext.Users.SingleOrDefault(x =>
                 x.Username == model.Username);
 
-            if (userAlreadyExists != null)
+            if (userAlreadyExists == null)
             {
                 var user = new User(model.FirstName, model.LastName, model.Username, model.Password);
                 _sqliteContext.Users.Add(user);
@@ -39,7 +39,7 @@ namespace Application.Auth
 
         public string GetToken(string username)
         {
-            var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("TestTask"));
+            var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("TestTask key created by admin"));
             var signingCredentials = new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha256);
             var jwtSecurityToken = new JwtSecurityToken(claims: new[]
                 {
